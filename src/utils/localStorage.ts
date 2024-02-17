@@ -14,7 +14,6 @@ export const getLocalStorageItem = (key: TLocalStorageKeys) => {
 
 export const setLocalStorageItem = (key: TLocalStorageKeys, value: unknown) => {
   try {
-    console.log(123123);
     localStorage.setItem(key, JSON.stringify(value));
   } catch {}
 };
