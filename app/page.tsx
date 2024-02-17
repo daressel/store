@@ -1,5 +1,6 @@
 'use client';
-import withMenu from '@/src/hoc/Menu';
+
+import { withMenu } from '@/src/hocs';
 
 function Home() {
   return (
