@@ -1,19 +1,25 @@
-export const getLocalStorageItem = (key: string) => {
+export const LocalStorageKeys = {
+  screenSize: 'screenSize',
+} as const;
+
+type TLocalStorageKeys = (typeof LocalStorageKeys)[keyof typeof LocalStorageKeys];
+
+export const getLocalStorageItem = (key: TLocalStorageKeys) => {
   try {
-    return JSON.parse(localStorage.getItem(key) ?? '');
+    return localStorage.getItem(key) ?? '';
   } catch {
-    return null;
+    return '';
   }
 };
 
-export const setLocalStorageItem = (key: string, value: unknown) => {
+export const setLocalStorageItem = (key: TLocalStorageKeys, value: unknown) => {
   try {
     console.log(123123);
     localStorage.setItem(key, JSON.stringify(value));
   } catch {}
 };
 
-export const removeLocalStorageItem = (key: string) => {
+export const removeLocalStorageItem = (key: TLocalStorageKeys) => {
   try {
     return localStorage.removeItem(key);
   } catch {}

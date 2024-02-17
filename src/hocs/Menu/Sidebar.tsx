@@ -1,23 +1,24 @@
 import { FC, Fragment, memo, useCallback, useEffect, useMemo, useState } from 'react';
 
-import { useScreenSize } from '@/src/hooks';
 import Drawer from '@/src/wrapper/Drawer';
 import { Box, Tab, Tabs } from '@mui/material';
+import { LocalStorageKeys, getLocalStorageItem } from '@/src/utils';
 
 type TSidebar = {};
 
-export const Sidebar: FC<TSidebar> = memo(function Component() {
+const Component: FC<TSidebar> = () => {
   const [isOpenedSidebar, setIsOpenedSidebar] = useState(false);
   const [isDrawerSidebar, setIsDrawerSidebar] = useState(false);
+
+  const screenSize = getLocalStorageItem(LocalStorageKeys.screenSize);
 
   const toggleSidebar = useCallback(() => {
     setIsOpenedSidebar((prev) => !prev);
   }, []);
 
-  // useEffect(() => {
-  //   console.log(screenSize);
-  //   setIsDrawerSidebar(screenSize === 'small');
-  // }, [screenSize]);
+  useEffect(() => {
+    setIsDrawerSidebar(screenSize === 'small');
+  }, [screenSize]);
 
   const [WrapperComponent, wrapperComponentProps] = useMemo(() => {
     const component = isDrawerSidebar ? Drawer : Fragment;
@@ -37,4 +38,6 @@ export const Sidebar: FC<TSidebar> = memo(function Component() {
       </Box>
     </WrapperComponent>
   );
-});
+};
+
+export const Sidebar = memo(Component);

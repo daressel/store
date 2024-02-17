@@ -9,6 +9,10 @@ import { useScreenSize } from '@/src/hooks';
 const darkTheme = createTheme({
   palette: {
     mode: 'dark',
+    background: {
+      default: '#101418',
+      paper: '#0F1924',
+    },
   },
 });
 
