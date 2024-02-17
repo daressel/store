@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useState } from 'react';
+import { setLocalStorageItem } from '../utils';
 
 type TScreenType = 'medium' | 'small' | 'large';
 
@@ -16,12 +17,15 @@ export const useScreenSize = () => {
     let newScreenSize: TScreenType = 'large';
     switch (true) {
       case isLarge:
+        setLocalStorageItem('screenSize', 'large');
         newScreenSize = 'large';
         break;
       case isMedium:
+        setLocalStorageItem('screenSize', 'medium');
         newScreenSize = 'medium';
         break;
       case isSmall:
+        setLocalStorageItem('screenSize', 'small');
         newScreenSize = 'small';
         break;
       default:
@@ -32,6 +36,7 @@ export const useScreenSize = () => {
   }, []);
 
   useEffect(() => {
+    resize();
     window.addEventListener('resize', resize);
     return () => {
       window.removeEventListener('resize', resize);

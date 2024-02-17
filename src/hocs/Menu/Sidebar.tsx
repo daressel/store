@@ -2,11 +2,11 @@ import { FC, Fragment, memo, useCallback, useEffect, useMemo, useState } from 'r
 
 import { useScreenSize } from '@/src/hooks';
 import Drawer from '@/src/wrapper/Drawer';
+import { Box, Tab, Tabs } from '@mui/material';
 
 type TSidebar = {};
 
 export const Sidebar: FC<TSidebar> = memo(function Component() {
-  const screenSize = useScreenSize();
   const [isOpenedSidebar, setIsOpenedSidebar] = useState(false);
   const [isDrawerSidebar, setIsDrawerSidebar] = useState(false);
 
@@ -14,10 +14,10 @@ export const Sidebar: FC<TSidebar> = memo(function Component() {
     setIsOpenedSidebar((prev) => !prev);
   }, []);
 
-  useEffect(() => {
-    console.log(screenSize);
-    setIsDrawerSidebar(screenSize === 'small');
-  }, [screenSize]);
+  // useEffect(() => {
+  //   console.log(screenSize);
+  //   setIsDrawerSidebar(screenSize === 'small');
+  // }, [screenSize]);
 
   const [WrapperComponent, wrapperComponentProps] = useMemo(() => {
     const component = isDrawerSidebar ? Drawer : Fragment;
@@ -27,6 +27,14 @@ export const Sidebar: FC<TSidebar> = memo(function Component() {
 
   return (
     //@ts-ignore
-    <WrapperComponent {...wrapperComponentProps}>qweqwe</WrapperComponent>
+    <WrapperComponent {...wrapperComponentProps}>
+      <Box>
+        <Tabs>
+          <Tab value="Categories" label="Categories" />
+          <Tab value="Products" label="Products" />
+          <Tab value="About Us" label="About" />
+        </Tabs>
+      </Box>
+    </WrapperComponent>
   );
 });

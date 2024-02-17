@@ -4,6 +4,7 @@ import { FC } from 'react';
 
 import { AppBar, Box, MenuItem, ThemeProvider, Toolbar, createTheme } from '@mui/material';
 import { Sidebar } from './Sidebar';
+import { useScreenSize } from '@/src/hooks';
 
 const darkTheme = createTheme({
   palette: {
@@ -13,6 +14,7 @@ const darkTheme = createTheme({
 
 export const withMenu = (Component: FC) => {
   return function ComponentWithMenuLayout(props: any) {
+    useScreenSize();
     return (
       <ThemeProvider theme={darkTheme}>
         <Box>
