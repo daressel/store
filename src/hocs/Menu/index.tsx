@@ -21,24 +21,26 @@ export const withMenu = (Component: FC) => {
   return function ComponentWithMenuLayout(props: any) {
     useScreenSize();
     return (
-      <ThemeProvider theme={darkTheme}>
-        <WithMenuBox>
-          <SideBarBox>
-            <Sidebar />
-          </SideBarBox>
-          <ContentBox>
-            <AppBar
-              position="sticky"
-              sx={{ backdropFilter: 'blur(2px)', backgroundImage: 'none', backgroundColor: 'transparent' }}
-            >
-              <TextField id="asd" />
-            </AppBar>
-            <MainBox>
-              <Component {...props} />
-            </MainBox>
-          </ContentBox>
-        </WithMenuBox>
-      </ThemeProvider>
+      // <ThemeProvider
+      // theme={darkTheme}
+      // >
+      <WithMenuBox>
+        <SideBarBox>
+          <Sidebar />
+        </SideBarBox>
+        <ContentBox>
+          <AppBar
+            position="sticky"
+            sx={{ backdropFilter: 'blur(2px)', backgroundImage: 'none', backgroundColor: 'transparent' }}
+          >
+            <TextField id="asd" />
+          </AppBar>
+          <MainBox>
+            <Component {...props} />
+          </MainBox>
+        </ContentBox>
+      </WithMenuBox>
+      // </ThemeProvider>
     );
   };
 };

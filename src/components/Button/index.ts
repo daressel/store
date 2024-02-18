@@ -1,4 +1,4 @@
-import emotionStyled from '@emotion/styled';
 import { Button as BaseButton } from '@mui/material';
+import styled from 'styled-components';
 
-export const Button = emotionStyled(BaseButton)``;
+export const Button = styled(BaseButton)``;
