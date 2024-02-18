@@ -2,9 +2,10 @@
 
 import { FC } from 'react';
 
-import { AppBar, Box, MenuItem, ThemeProvider, Toolbar, createTheme } from '@mui/material';
+import { AppBar, MenuItem, TextField, ThemeProvider, Toolbar, createTheme } from '@mui/material';
 import { Sidebar } from './Sidebar';
 import { useScreenSize } from '@/src/hooks';
+import { ContentBox, MainBox, SideBarBox, WithMenuBox } from './styled';
 
 const darkTheme = createTheme({
   palette: {
@@ -21,18 +22,22 @@ export const withMenu = (Component: FC) => {
     useScreenSize();
     return (
       <ThemeProvider theme={darkTheme}>
-        <Box>
-          <AppBar position="fixed">
-            <Toolbar>
-              <MenuItem>qweqwe</MenuItem>
-              asdasd
-            </Toolbar>
-          </AppBar>
-          <Box>
-            <Component {...props} />
-          </Box>
-        </Box>
-        <Sidebar />
+        <WithMenuBox>
+          <SideBarBox>
+            <Sidebar />
+          </SideBarBox>
+          <ContentBox>
+            <AppBar
+              position="sticky"
+              sx={{ backdropFilter: 'blur(2px)', backgroundImage: 'none', backgroundColor: 'transparent' }}
+            >
+              <TextField id="asd" />
+            </AppBar>
+            <MainBox>
+              <Component {...props} />
+            </MainBox>
+          </ContentBox>
+        </WithMenuBox>
       </ThemeProvider>
     );
   };
