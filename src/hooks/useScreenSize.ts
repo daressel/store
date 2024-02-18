@@ -2,8 +2,7 @@
 
 import { useCallback, useEffect, useState } from 'react';
 import { setLocalStorageItem } from '../utils';
-
-type TScreenType = 'medium' | 'small' | 'large';
+import { TScreenType } from '../types';
 
 export const useScreenSize = () => {
   const [screenSize, setScreenSize] = useState<TScreenType>('large');

@@ -13,13 +13,13 @@ export const SideBarBox = styled.div`
 
 export const ContentBox = styled.div`
   flex-grow: 1;
-  margin-inline: 15dvw;
+  margin-inline: 20dvw;
 `;
 
 export const MainBox = styled.main`
   display: flex;
-  padding-top: 10px;
+  padding-block: 3dvh;
   flex-wrap: wrap;
   justify-content: space-between;
-  row-gap: 5dvh;
+  gap: 3dvh;
 `;

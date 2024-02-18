@@ -4,13 +4,13 @@ export const LocalStorageKeys = {
 
 type TLocalStorageKeys = (typeof LocalStorageKeys)[keyof typeof LocalStorageKeys];
 
-export const getLocalStorageItem = (key: TLocalStorageKeys) => {
+export function getLocalStorageItem<T>(key: TLocalStorageKeys): T {
   try {
-    return localStorage.getItem(key) ?? '';
+    return (JSON.parse(localStorage.getItem(key) ?? '') as T) ?? ('' as T);
   } catch {
-    return '';
+    return '' as T;
   }
-};
+}
 
 export const setLocalStorageItem = (key: TLocalStorageKeys, value: unknown) => {
   try {
