@@ -1,6 +1,5 @@
-'use client';
-
-import { CardProduct } from '@/src/components';
+import CardProduct from '@/src/components/CardProduct';
+import { Menu } from '@/src/layouts';
 import { TProduct } from '@/src/types';
 import { CardList } from '@/src/wrappers';
 
@@ -8,11 +7,13 @@ const cards: TProduct[] = [];
 
 function Home() {
   return (
-    <CardList>
-      {cards.map((product) => (
-        <CardProduct key={product.id} product={product} />
-      ))}
-    </CardList>
+    <Menu>
+      <CardList>
+        {cards.map((product) => (
+          <CardProduct key={product.id} product={product} />
+        ))}
+      </CardList>
+    </Menu>
   );
 }
 

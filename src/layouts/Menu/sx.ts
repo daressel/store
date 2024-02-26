@@ -6,9 +6,11 @@ export const withMenuBoxSx: SxProps = {
 
 export const sideBarBoxSx: SxProps = {
   display: 'flex',
+  flexDirection: 'column',
   height: '100dvh',
   position: 'fixed',
   backgroundColor: 'transparent',
+  paddingBlock: '15px',
 };
 
 export const contentBoxSx: SxProps = {

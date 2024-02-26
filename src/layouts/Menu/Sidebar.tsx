@@ -1,59 +1,26 @@
 import { FC, memo } from 'react';
 
-import { Tab, Tabs } from '@mui/material';
+import { Tab, Tabs, Typography } from '@mui/material';
+import Link from 'next/link';
 
 type TSidebar = {};
 
 const Component: FC<TSidebar> = () => {
   return (
-    <Tabs value="Categories" orientation="vertical">
-      <Tab value="Categories" label="Categories" />
-      <Tab value="Products" label="Products" />
-      <Tab value="AboutUs" label="About" />
-      <Tab value="AboutUs" label="About" />
-      <Tab value="AboutUs" label="About" />
-      <Tab value="AboutUs" label="About" />
-      <Tab value="AboutUs" label="About" />
-      <Tab value="AboutUs" label="About" />
-      <Tab value="AboutUs" label="About" />
-      <Tab value="AboutUs" label="About" />
-      <Tab value="AboutUs" label="About" />
-      <Tab value="AboutUs" label="About" />
-      <Tab value="AboutUs" label="About" />
-      <Tab value="AboutUs" label="About" />
-      <Tab value="AboutUs" label="About" />
-      <Tab value="AboutUs" label="About" />
-      <Tab value="AboutUs" label="About" />
-      <Tab value="AboutUs" label="About" />
-      <Tab value="AboutUs" label="About" />
-      <Tab value="AboutUs" label="About" />
-      <Tab value="AboutUs" label="About" />
-      <Tab value="AboutUs" label="About" />
-      <Tab value="AboutUs" label="About" />
-      <Tab value="AboutUs" label="About" />
-      <Tab value="AboutUs" label="About" />
-      <Tab value="AboutUs" label="About" />
-      <Tab value="AboutUs" label="About" />
-      <Tab value="AboutUs" label="About" />
-      <Tab value="AboutUs" label="About" />
-      <Tab value="AboutUs" label="About" />
-      <Tab value="AboutUs" label="About" />
-      <Tab value="AboutUs" label="About" />
-      <Tab value="AboutUs" label="About" />
-      <Tab value="AboutUs" label="About" />
-      <Tab value="AboutUs" label="About" />
-      <Tab value="AboutUs" label="About" />
-      <Tab value="AboutUs" label="About" />
-      <Tab value="AboutUs" label="About" />
-      <Tab value="AboutUs" label="About" />
-      <Tab value="AboutUs" label="About" />
-      <Tab value="AboutUs" label="About" />
-      <Tab value="AboutUs" label="About" />
-      <Tab value="AboutUs" label="About" />
-      <Tab value="AboutUs" label="About" />
-      <Tab value="AboutUs" label="About" />
-      <Tab value="AboutUs" label="About" />
-    </Tabs>
+    <>
+      <Typography align="center">Menu</Typography>
+      <Tabs value="Categories" orientation="vertical" variant="scrollable">
+        <Link href="/categories">
+          <Tab value="Categories" label="Categories" />
+        </Link>
+        <Link href="/products">
+          <Tab value="Products" label="Products" />
+        </Link>
+        <Link href="/about-us">
+          <Tab value="About Us" label="About Us" />
+        </Link>
+      </Tabs>
+    </>
   );
 };
 

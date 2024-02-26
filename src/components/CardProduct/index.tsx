@@ -6,7 +6,7 @@ type TCardProduct = {
   product: TProduct;
 };
 
-const Component: FC<TCardProduct> = ({ product }) => {
+const CardProduct: FC<TCardProduct> = ({ product }) => {
   return (
     <Card variant="outlined" sx={{ width: '320px' }}>
       <CardHeader title={product.name} />
@@ -22,4 +22,4 @@ const Component: FC<TCardProduct> = ({ product }) => {
   );
 };
 
-export const CardProduct = memo(Component);
+export default memo(CardProduct);
