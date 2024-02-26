@@ -1,22 +1,22 @@
-import styled from 'styled-components';
+import emotionStyled from '@emotion/styled';
 
-export const WithMenuBox = styled.div`
+export const WithMenuBox = emotionStyled.div`
   display: flex;
 `;
 
-export const SideBarBox = styled.div`
+export const SideBarBox = emotionStyled.div`
   display: flex;
   height: 100dvh;
   position: fixed;
   background-color: transparent;
 `;
 
-export const ContentBox = styled.div`
+export const ContentBox = emotionStyled.div`
   flex-grow: 1;
   margin-inline: 20dvw;
 `;
 
-export const MainBox = styled.main`
+export const MainBox = emotionStyled.main`
   display: flex;
   padding-block: 3dvh;
   flex-wrap: wrap;

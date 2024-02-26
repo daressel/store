@@ -1,22 +1,21 @@
-import { Card, CardContent, CardHeader, Typography } from '@mui/material';
 import { FC, memo } from 'react';
+import { Card, CardContent, CardHeader, Typography } from '@mui/material';
+import { TProduct } from '@/src/types';
 
 type TCardProduct = {
-  name: string;
-  price: number;
-  description: string;
+  product: TProduct;
 };
 
-const Component: FC<TCardProduct> = ({ description, name, price }) => {
+const Component: FC<TCardProduct> = ({ product }) => {
   return (
     <Card variant="outlined" sx={{ width: '320px' }}>
-      <CardHeader title={name} />
+      <CardHeader title={product.name} />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          {description}
+          {product.description}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          {price} rub
+          {product.price} rub
         </Typography>
       </CardContent>
     </Card>

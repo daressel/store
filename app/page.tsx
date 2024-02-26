@@ -1,25 +1,19 @@
 'use client';
 
 import { CardProduct } from '@/src/components';
-import { withMenu } from '@/src/hocs';
+import { TProduct } from '@/src/types';
 import { CardList } from '@/src/wrappers';
-import { Card, CardContent, CardHeader, Typography } from '@mui/material';
 
-const cards = Array.from(Array(100));
+const cards: TProduct[] = [];
 
 function Home() {
   return (
     <CardList>
-      {cards.map((_, index) => (
-        <CardProduct
-          key={index}
-          description="This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like."
-          name="Some name"
-          price={100}
-        />
+      {cards.map((product) => (
+        <CardProduct key={product.id} product={product} />
       ))}
     </CardList>
   );
 }
 
-export default withMenu(Home);
+export default Home;
