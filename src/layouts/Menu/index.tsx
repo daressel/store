@@ -1,7 +1,7 @@
 import { FC, ReactNode, memo } from 'react';
-import { AppBar, TextField } from '@mui/material';
+import { AppBar, Box, SxProps, TextField } from '@mui/material';
 
-import { ContentBox, MainBox, SideBarBox, WithMenuBox } from './styled';
+import { contentBoxSx, mainBoxSx, sideBarBoxSx, withMenuBoxSx } from './sx';
 import { Sidebar } from './Sidebar';
 
 type TMenu = {
@@ -9,19 +9,20 @@ type TMenu = {
 };
 
 const Component: FC<TMenu> = ({ children }) => (
-  <WithMenuBox>
-    <SideBarBox></SideBarBox>
-    <ContentBox>
+  <Box sx={withMenuBoxSx}>
+    <Box sx={sideBarBoxSx}>
       <Sidebar />
+    </Box>
+    <Box sx={contentBoxSx}>
       <AppBar
         position="sticky"
         sx={{ backdropFilter: 'blur(2px)', backgroundImage: 'none', backgroundColor: 'transparent' }}
       >
-        <TextField id="search" />
+        <TextField id="items" />
       </AppBar>
-      <MainBox>{children}</MainBox>
-    </ContentBox>
-  </WithMenuBox>
+      <Box sx={mainBoxSx}>{children}</Box>
+    </Box>
+  </Box>
 );
 
 export const Menu = memo(Component);
