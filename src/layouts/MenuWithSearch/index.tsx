@@ -6,7 +6,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
-import { searchBox, searchIconWrapper, styledInputBase } from './sx';
+import { navBox, searchBox, searchIconWrapper, styledInputBase } from './sx';
 import { TSidebar } from './Sidebar';
 import { MenuButton } from './MenuButton';
 
@@ -18,7 +18,7 @@ export type TMenuWithSearch = TSidebar & {
 const Component: FC<TMenuWithSearch> = ({ children, hideSearch, additionalTabs, customTabs }) => {
   return (
     <Box>
-      <Box id="rofl">
+      <Box sx={navBox}>
         <AppBar position="static">
           <Toolbar>
             <MenuButton additionalTabs={additionalTabs} customTabs={customTabs} />

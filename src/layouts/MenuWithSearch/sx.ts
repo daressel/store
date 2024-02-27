@@ -36,3 +36,8 @@ export const styledInputBase: SxProps = {
     },
   },
 };
+
+export const navBox: SxProps = {
+  position: 'sticky',
+  top: 0,
+};
