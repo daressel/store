@@ -2,12 +2,14 @@
 
 import { Button, Drawer } from '@mui/material';
 import { FC, memo, useCallback, useState } from 'react';
-import { Sidebar } from './Sidebar';
+import { Sidebar, TSidebar } from './Sidebar';
 import { BlockIds } from '@/src/utils';
 import { Menu } from '@mui/icons-material';
 import { buttonNavMenu } from './sx';
 
-const Component: FC = () => {
+type ButtonNavMenu = TSidebar;
+
+const Component: FC<ButtonNavMenu> = ({ additionalTabs, customTabs }) => {
   const [isShowDrawer, setIsShowDrawer] = useState(false);
 
   const toggleDrawer = useCallback(
@@ -23,7 +25,7 @@ const Component: FC = () => {
         <Menu />
       </Button>
       <Drawer open={isShowDrawer} onClose={toggleDrawer(false)}>
-        <Sidebar />
+        <Sidebar additionalTabs={additionalTabs} customTabs={customTabs} />
       </Drawer>
     </>
   );

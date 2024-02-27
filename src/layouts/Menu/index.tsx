@@ -13,7 +13,7 @@ export type TMenu = TSidebar & {
 
 const Component: FC<TMenu> = ({ children, hideSearch, additionalTabs, customTabs }) => (
   <Box sx={withMenuBoxSx}>
-    <ButtonNavMenu />
+    <ButtonNavMenu additionalTabs={additionalTabs} customTabs={customTabs} />
     <Box sx={sideBarBoxSx} id={BlockIds.sidebarWithNavMenu}>
       <Sidebar additionalTabs={additionalTabs} customTabs={customTabs} />
     </Box>

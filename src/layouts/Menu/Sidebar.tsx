@@ -16,6 +16,7 @@ const defaultTabs: TNavTab[] = [
   { label: 'Categories', value: '/categories' },
   { label: 'Products', value: '/products' },
   { label: 'About us', value: '/about-us' },
+  { label: 'Admin', value: '/admin' },
 ];
 
 const Component: FC<TSidebar> = ({ customTabs, additionalTabs }) => {
