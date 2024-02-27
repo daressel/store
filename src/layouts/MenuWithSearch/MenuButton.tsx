@@ -1,15 +1,13 @@
 'use client';
 
-import { Button, Drawer } from '@mui/material';
 import { FC, memo, useCallback, useState } from 'react';
+import { Drawer, IconButton } from '@mui/material';
 import { Sidebar, TSidebar } from './Sidebar';
-import { BlockIds } from '@/src/utils';
 import { Menu } from '@mui/icons-material';
-import { buttonNavMenu } from './sx';
 
-type ButtonNavMenu = TSidebar;
+type MenuButtonMenu = TSidebar;
 
-const Component: FC<ButtonNavMenu> = ({ additionalTabs, customTabs }) => {
+const Component: FC<MenuButtonMenu> = ({ additionalTabs, customTabs }) => {
   const [isShowDrawer, setIsShowDrawer] = useState(false);
 
   const toggleDrawer = useCallback(
@@ -21,9 +19,16 @@ const Component: FC<ButtonNavMenu> = ({ additionalTabs, customTabs }) => {
 
   return (
     <>
-      <Button id={BlockIds.buttonNavMenuSmallScreen} onClick={toggleDrawer(true)} sx={buttonNavMenu}>
+      <IconButton
+        onClick={toggleDrawer(true)}
+        size="large"
+        edge="start"
+        color="inherit"
+        aria-label="open drawer"
+        sx={{ mr: 2 }}
+      >
         <Menu />
-      </Button>
+      </IconButton>
       <Drawer open={isShowDrawer} onClose={toggleDrawer(false)}>
         <Sidebar additionalTabs={additionalTabs} customTabs={customTabs} />
       </Drawer>
@@ -31,4 +36,4 @@ const Component: FC<ButtonNavMenu> = ({ additionalTabs, customTabs }) => {
   );
 };
 
-export const ButtonNavMenu = memo(Component);
+export const MenuButton = memo(Component);

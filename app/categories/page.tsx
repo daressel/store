@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import { Menu } from '@/src/layouts';
 import { CardList } from '@/src/wrappers';
 import CardCategory from '@/src/components/CardCategory';
 
@@ -9,14 +8,14 @@ const cards: TCategory[] = [];
 
 const Categories: FC = () => {
   return (
-    <Menu>
+    <>
       Categories
       <CardList>
         {cards.map((category) => (
           <CardCategory key={category.id} category={category} />
         ))}
       </CardList>
-    </Menu>
+    </>
   );
 };
 

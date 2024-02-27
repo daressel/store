@@ -1,8 +1,8 @@
-import { Menu } from '@/src/layouts';
+import { MenuWithSearch } from '@/src/layouts/MenuWithSearch';
 import { FC } from 'react';
 
 const AboutUs: FC = () => {
-  return <Menu>About Us</Menu>;
+  return <MenuWithSearch>About Us</MenuWithSearch>;
 };
 
 export default AboutUs;

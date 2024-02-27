@@ -12,8 +12,9 @@ const Component: FC<TCardList> = ({ children }) => {
         display: 'flex',
         alignItems: 'center',
         flexWrap: 'wrap',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
         gap: '3dvh',
+        padding: '3dvh',
       }}
     >
       {children}

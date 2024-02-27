@@ -1,6 +1,7 @@
 import { FC, memo } from 'react';
 import { Card, CardContent, CardHeader, Typography } from '@mui/material';
 import { TProduct } from '@/src/types';
+import { cardSx } from '../generalSx';
 
 type TCardProduct = {
   product: TProduct;
@@ -8,7 +9,7 @@ type TCardProduct = {
 
 const CardProduct: FC<TCardProduct> = ({ product }) => {
   return (
-    <Card variant="outlined" sx={{ width: '320px' }}>
+    <Card variant="outlined" sx={cardSx}>
       <CardHeader title={product.name} />
       <CardContent>
         <Typography variant="body2" color="text.secondary">

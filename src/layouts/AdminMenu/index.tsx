@@ -1,10 +1,9 @@
 import { FC, memo } from 'react';
 
 import { TNavTab } from '@/src/types';
+import { MenuWithSearch, TMenuWithSearch } from '../MenuWithSearch';
 
-import { TMenu, Menu } from '..';
-
-type TAdminMenu = TMenu;
+type TAdminMenu = TMenuWithSearch;
 
 const adminMenuTabs: TNavTab[] = [
   { label: 'Categories', value: '/admin/categories' },
@@ -12,9 +11,9 @@ const adminMenuTabs: TNavTab[] = [
 ];
 
 const Component: FC<TAdminMenu> = ({ children }) => (
-  <Menu hideSearch customTabs={adminMenuTabs}>
+  <MenuWithSearch hideSearch customTabs={adminMenuTabs}>
     {children}
-  </Menu>
+  </MenuWithSearch>
 );
 
 export const AdminMenu = memo(Component);
