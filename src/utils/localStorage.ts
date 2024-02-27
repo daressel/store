@@ -1,6 +1,4 @@
-export const LocalStorageKeys = {
-  screenSize: 'screenSize',
-} as const;
+import { LocalStorageKeys } from '.';
 
 type TLocalStorageKeys = (typeof LocalStorageKeys)[keyof typeof LocalStorageKeys];
 

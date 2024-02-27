@@ -11,11 +11,12 @@ export const sideBarBoxSx: SxProps = {
   position: 'fixed',
   backgroundColor: 'transparent',
   paddingBlock: '15px',
+  boxShadow: '1px 0 5px rgba(0,0,0,0.2)',
 };
 
 export const contentBoxSx: SxProps = {
   flexGrow: 1,
-  marginInline: '20dvw',
+  marginInline: 'max(20dvw, 60px)',
 };
 
 export const mainBoxSx: SxProps = {
@@ -24,4 +25,12 @@ export const mainBoxSx: SxProps = {
   flexWrap: 'wrap',
   justifyContent: 'space-between',
   gap: '3dvh',
+};
+
+export const buttonNavMenu: SxProps = {
+  position: 'fixed',
+  left: 0,
+  top: 0,
+  margin: '0px',
+  padding: '20px',
 };

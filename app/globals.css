@@ -1,7 +1,19 @@
 html {
-    /* background: #001720; */
+  /* background: #001720; */
 }
 
 body {
-    margin: 0;
+  margin: 0;
+}
+
+@media (width <= 900px) {
+  #sidebar-with-nav-menu {
+    display: none;
+  }
+}
+
+@media (width > 900px) {
+  #button-nav-menu-small-screen {
+    display: none;
+  }
 }

@@ -1,24 +1,28 @@
 import { FC, ReactNode, memo } from 'react';
-import { AppBar, Box, SxProps, TextField } from '@mui/material';
+import { AppBar, Box, TextField } from '@mui/material';
 
 import { contentBoxSx, mainBoxSx, sideBarBoxSx, withMenuBoxSx } from './sx';
-import { Sidebar } from './Sidebar';
+import { Sidebar, TSidebar } from './Sidebar';
+import { BlockIds } from '@/src/utils';
+import { ButtonNavMenu } from './ButtonNavMenu';
 
-type TMenu = {
+export type TMenu = TSidebar & {
   children: ReactNode;
+  hideSearch?: boolean;
 };
 
-const Component: FC<TMenu> = ({ children }) => (
+const Component: FC<TMenu> = ({ children, hideSearch, additionalTabs, customTabs }) => (
   <Box sx={withMenuBoxSx}>
-    <Box sx={sideBarBoxSx}>
-      <Sidebar />
+    <ButtonNavMenu />
+    <Box sx={sideBarBoxSx} id={BlockIds.sidebarWithNavMenu}>
+      <Sidebar additionalTabs={additionalTabs} customTabs={customTabs} />
     </Box>
     <Box sx={contentBoxSx}>
       <AppBar
         position="sticky"
         sx={{ backdropFilter: 'blur(2px)', backgroundImage: 'none', backgroundColor: 'transparent' }}
       >
-        <TextField id="items" />
+        {!hideSearch && <TextField id="items" />}
       </AppBar>
       <Box sx={mainBoxSx}>{children}</Box>
     </Box>

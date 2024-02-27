@@ -16,3 +16,8 @@ export type TProduct = {
   categories: string[];
   kWords: string[];
 };
+
+export type TNavTab = {
+  value: string;
+  label: string;
+};
