@@ -30,7 +30,7 @@ const Component: FC<MenuButtonMenu> = ({ additionalTabs, customTabs }) => {
         <Menu />
       </IconButton>
       <Drawer open={isShowDrawer} onClose={toggleDrawer(false)}>
-        <Sidebar additionalTabs={additionalTabs} customTabs={customTabs} />
+        <Sidebar additionalTabs={additionalTabs} customTabs={customTabs} onClose={toggleDrawer(false)} />
       </Drawer>
     </>
   );

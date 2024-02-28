@@ -24,14 +24,14 @@ export const styledInputBase: SxProps = {
     transition: 'width 0.3s ease-in-out',
     padding: '10px',
     paddingLeft: `2.5em`,
+    border: '1px solid transparent',
     '&:focus': {
       width: '30ch',
-      border: '1px solid white',
+      borderColor: 'white',
       borderRadius: '5px',
     },
     '&:hover': {
-      width: '30ch',
-      border: '1px solid white',
+      borderColor: 'white',
       borderRadius: '5px',
     },
   },
@@ -39,5 +39,19 @@ export const styledInputBase: SxProps = {
 
 export const navBox: SxProps = {
   position: 'sticky',
+  top: 0,
+};
+
+export const sidebarTab: SxProps = {
+  maxWidth: 'unset',
+  transition: 'background-color 0.3s ease-out',
+  '&:hover': {
+    backgroundColor: '#a1a1a1',
+  },
+};
+
+export const closeSidebarButton: SxProps = {
+  position: 'absolute',
+  right: 0,
   top: 0,
 };
