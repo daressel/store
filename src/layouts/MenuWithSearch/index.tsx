@@ -23,7 +23,7 @@ const Component: FC<TMenuWithSearch> = ({ children, hideSearch, additionalTabs, 
           <Toolbar>
             <MenuButton additionalTabs={additionalTabs} customTabs={customTabs} />
             <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}>
-              MUI
+              Kirillov
             </Typography>
             <Box sx={searchBox}>
               <Box sx={searchIconWrapper}>

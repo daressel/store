@@ -41,7 +41,7 @@ const Component: FC<TSidebar> = ({ customTabs, additionalTabs, onClose }) => {
         width: 'min(520px, 100dvw)',
       }}
     >
-      <Typography align="center" variant="h4">
+      <Typography align="center" variant="h4" sx={{ marginBlock: '5px' }}>
         Menu
       </Typography>
       <IconButton onClick={handleClose} sx={closeSidebarButton}>

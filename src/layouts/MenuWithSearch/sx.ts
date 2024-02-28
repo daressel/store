@@ -52,6 +52,6 @@ export const sidebarTab: SxProps = {
 
 export const closeSidebarButton: SxProps = {
   position: 'absolute',
-  right: 0,
-  top: 0,
+  right: '5px',
+  top: '5px',
 };
