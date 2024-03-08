@@ -38,7 +38,7 @@ const Component: FC<TSidebar> = ({ customTabs, additionalTabs, onClose }) => {
   return (
     <Box
       sx={{
-        width: 'min(520px, 100dvw)',
+        width: 'min(420px, 100dvw)',
       }}
     >
       <Typography align="center" variant="h4" sx={{ marginBlock: '5px' }}>

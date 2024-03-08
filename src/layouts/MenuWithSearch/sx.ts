@@ -55,3 +55,19 @@ export const closeSidebarButton: SxProps = {
   right: '5px',
   top: '5px',
 };
+
+export const bottomNavBar: SxProps = {
+  position: 'fixed',
+  bottom: 0,
+  left: 0,
+  right: 0,
+  backgroundColor: 'rgba(241, 251, 251, 0.7)',
+  backdropFilter: 'blur(3px)',
+  borderTopLeftRadius: '20px',
+  borderTopRightRadius: '20px',
+};
+
+export const footerBox: SxProps = {
+  minHeight: '50px',
+  marginBottom: '50px',
+};
